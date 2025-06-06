@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f0f4f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: linear-gradient(90deg, #008080, #FFC107);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #FFECB3;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.welcome-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #008080;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #006666;
+}
+
+/* Problems Section */
+.problems-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.problems-section h2 {
+  color: #008080;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+}
+
+.problem-card h3 {
+  color: #008080;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.problem-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* About Section */
+.about-section {
+  padding: 3rem 1rem;
+  background: #f0f4f5;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: #008080;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.chatbot-container {
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  max-width: 450px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-container:hover {
+  transform: translateY(-5px);
+}
+
+.chatbot-container h2 {
+  color: #008080;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.chatbot-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.chatbot-container iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #FFC107;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Loader */
+.loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #008080;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #008080;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .welcome-content h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  .chatbot-container iframe {
+    height: 400px;
+  }
+}
