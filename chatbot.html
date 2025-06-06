@@ -13,8 +13,8 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <!-- Font Awesome for Social Media Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Placeholder Chatbot Script (Replace with your provider's script) -->
-  <script async src="https://your-chatbot-provider.com/chatbot.js"></script>
+  <!-- Zapier Chatbot Script -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -34,9 +34,8 @@
   <section class="chatbot-section">
     <div class="chatbot-container">
       <h2>Try Our Chatbot Demo 🎉</h2>
-      <p>Experience how our AI chatbot automates client inquiries and provides instant quotes for events starting at ₹3,000. Perfect for event management businesses.</p>
-      <!-- Placeholder Chatbot Embed (Replace with your provider's embed tag) -->
-      <div id="chatbot-embed" data-chatbot-id="your-chatbot-id" style="width: 400px; height: 600px; border-radius: 10px;"></div>
+      <p>Experience how our AI chatbot automates client inquiries and provides instant quotes for events starting at ₹3,000.</p>
+      <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
       <a href="index.html" class="cta-button">Back to Home</a>
     </div>
   </section>
@@ -46,7 +45,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>GatherGenius</h3>
-        <p>Empowering event management businesses with AI-driven automation. Contact us to transform your client engagement.</p>
+        <p>Empowering event management businesses with AI-driven automation.</p>
       </div>
       <div class="footer-section">
         <h3>Quick Links</h3>
@@ -55,6 +54,7 @@
           <li><a href="index.html#benefits">Benefits</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li><a href="index.html#demo">Demo</a></li>
+          <li><a href="chatbot.html">Try Chatbot</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -73,13 +73,28 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 GatherGenius. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="api-docs.html">API Docs</a></p>
+      <p>© 2025 GatherGenius. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Loader -->
   <div class="loader" id="loader"></div>
 
-  <script src="scripts.js"></script>
+  <!-- Inline JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Show Loader on Page Load
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.display = 'flex';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
