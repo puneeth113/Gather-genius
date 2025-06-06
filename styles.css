@@ -13,7 +13,7 @@ body {
 
 /* Navigation Bar */
 .navbar {
-  background: #2E7D32; /* Solid emerald green */
+  background: #2E7D32; /* Emerald green */
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -53,16 +53,73 @@ body {
   cursor: pointer;
 }
 
-/* Introduction Section */
+/* Introduction Section with Slider */
 .intro-section {
-  background: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-  color: white;
-  padding: 5rem 1rem;
-  text-align: center;
+  position: relative;
   min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 33.33%;
+  background-size: cover;
+  background-position: center;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #F9A825;
 }
 
 .intro-content {
@@ -70,6 +127,7 @@ body {
   padding: 2rem;
   border-radius: 10px;
   max-width: 700px;
+  z-index: 5;
 }
 
 .intro-content h1 {
@@ -98,20 +156,20 @@ body {
   transform: scale(1.05);
 }
 
-/* Problems Section */
-.problems-section {
+/* Benefits Section */
+.benefits-section {
   padding: 3rem 1rem;
   background: white;
   text-align: center;
 }
 
-.problems-section h2 {
+.benefits-section h2 {
   color: #2E7D32;
   font-size: 2.2rem;
   margin-bottom: 2rem;
 }
 
-.problems-grid {
+.benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
@@ -119,7 +177,7 @@ body {
   margin: 0 auto;
 }
 
-.problem-card {
+.benefit-card {
   background: #f9f9f9;
   padding: 1.5rem;
   border-radius: 10px;
@@ -127,17 +185,17 @@ body {
   transition: transform 0.3s ease;
 }
 
-.problem-card:hover {
+.benefit-card:hover {
   transform: translateY(-5px);
 }
 
-.problem-card h3 {
+.benefit-card h3 {
   color: #2E7D32;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
-.problem-card p {
+.benefit-card p {
   font-size: 1rem;
   color: #555;
 }
@@ -187,6 +245,11 @@ body {
   margin-bottom: 1rem;
 }
 
+.pricing-card .price span {
+  font-size: 1rem;
+  color: #555;
+}
+
 .pricing-card ul {
   list-style: none;
   margin-bottom: 1.5rem;
@@ -198,11 +261,37 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Demo Section */
+.demo-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.demo-section h2 {
+  color: #2E7D32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.demo-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Chatbot Section */
 .chatbot-section {
   padding: 3rem 1rem;
   background: white;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chatbot-container {
@@ -210,8 +299,8 @@ body {
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 450px;
+  width: 90%;
   transition: transform 0.3s ease;
 }
 
@@ -231,12 +320,38 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.chatbot-container zapier-interfaces-chatbot-embed {
+.chatbot-container #chatbot-embed {
   display: block;
-  width: 100%;
+  width: 400px;
   height: 600px;
   border-radius: 10px;
   border: none;
+}
+
+/* Policy Section */
+.policy-section {
+  padding: 3rem 1rem;
+  background: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.policy-section h1 {
+  color: #2E7D32;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.policy-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.policy-section h2 {
+  color: #2E7D32;
+  font-size: 1.5rem;
+  margin: 1.5rem 0 0.5rem;
 }
 
 /* Footer */
@@ -372,7 +487,8 @@ footer {
     padding: 1rem;
   }
 
-  .chatbot-container zapier-interfaces-chatbot-embed {
+  .chatbot-container #chatbot-embed {
+    width: 100%;
     height: 400px;
   }
 
