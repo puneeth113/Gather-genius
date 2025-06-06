@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Zapier Chatbot Script -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -30,8 +32,7 @@
     <div class="chatbot-container">
       <h2>Chat with GatherGenius 🎉</h2>
       <p>Plan your event with ease! Ask about services, get instant quotes, or book now.</p>
-      <iframe src="https://interfaces.zapier.com/embed/chatbot/cmbj6vicu005a36wcqbi486vg" 
-              allow="clipboard-write *"></iframe>
+      <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
       <button class="cta-button" onclick="window.location.href='index.html'">Back to Home</button>
     </div>
   </section>
