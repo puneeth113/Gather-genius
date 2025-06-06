@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chat with GatherGenius' AI chatbot to plan affordable events like weddings, birthdays, and corporate gatherings.">
+  <meta name="keywords" content="event planning chatbot, GatherGenius, affordable events, weddings, birthdays">
+  <meta name="author" content="GatherGenius">
+  <meta name="robots" content="index, follow">
+  <title>GatherGenius - Chat with Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Zapier Chatbot Script -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">GatherGenius</div>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#problems">Challenges</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#connect">Connect</a></li>
+      <li><a href="chatbot.html">Chat with Us</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <!-- Chatbot Section -->
+  <section class="chatbot-section">
+    <div class="chatbot-container">
+      <h2>Chat with GatherGenius 🎉</h2>
+      <p>Plan your event with ease! Ask about services, get instant quotes, or book now.</p>
+      <zapier-interfaces-chatbot-embed is-popup='false' chatbot-id='cmbj6vicu005a36wcqbi486vg' height='600px' width='400px'></zapier-interfaces-chatbot-embed>
+      <a href="index.html" class="cta-button">Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>GatherGenius</h3>
+        <p>Planning unforgettable events with ease and affordability. Contact us to make your next event a success!</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#problems">Challenges</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#connect">Connect</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:contact@gathergenius.com">contact@gathergenius.com</a></p>
+        <p>Phone: +91 123-456-7890</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GatherGenius. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+    </div>
+  </footer>
+
+  <!-- Loader -->
+  <div class="loader" id="loader"></div>
+
+  <script>
+    // Mobile Menu Toggle -->
+    <script src="scripts.js"></script>
+</body>
+</html>
+---
+
+### styles.css
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: #2E7D32; /* Solid emerald green */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #F9A825; /* Golden yellow */
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Introduction Section */
+.intro-section {
+  background: url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.intro-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #2E7D32;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #1B5E20;
+  transform: scale(1.05);
+}
+
+/* Problems Section */
+.problems-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.problems-section h2 {
+  color: #2E7D32;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+}
+
+.problem-card h3 {
+  color: #2E7D32;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.problem-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 3rem 1rem;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.pricing-section h2 {
+  color: #2E7D32;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+  color: #2E7D32;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  color: #F9A825;
+  margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Connect Section */
+.connect-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+}
+
+.connect-section h2 {
+  color: #2E7D32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.connect-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  padding: 3rem 1rem;
+  background: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbot-container {
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 450px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.chatbot-container:hover {
+  transform: scale(1.02);
+}
+
+.chatbot-container h2 {
+  color: #2E7D32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.chatbot-container p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.chatbot-container zapier-interfaces-chatbot-embed {
+  display: block;
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Footer */
+footer {
+  background: #2E7D32;
+  color: white;
+  padding: 3rem 1rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section ul li a {
+  font-size: 1rem;
+  color: #E8F5E9;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a:hover {
+  color: #F9A825;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #F9A825;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #E8F5E9;
+}
+
+.footer-bottom p, .footer-bottom a {
+  font-size: 0.9rem;
+  color: #E8F5E9;
+}
+
+.footer-bottom a:hover {
+  color: #F9A825;
+}
+
+/* Loader */
+.loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #2E7D32;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #2E7D32;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .intro-content h1 {
+    font-size: 2rem;
+  }
+
+  .intro-content p {
+    font-size: 1rem;
+  }
+
+  .chatbot-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .chatbot-container zapier-interfaces-chatbot-embed {
+    width: 100%;
+    height: 400px;
+  }
+
+  .chatbot-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .chatbot-container p {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
