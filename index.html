@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GatherGenius: AI chatbot service for event management businesses. Automate inquiries, provide instant quotes, and boost conversions.">
-  <meta name="keywords" content="event management chatbot, AI chatbot, event planning automation, GatherGenius">
-  <meta name="author" content="GatherGenius">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GatherGenius: AI chatbot service for event management businesses. Automate inquiries, provide instant quotes, and boost conversions." />
+  <meta name="keywords" content="event management chatbot, AI chatbot, event planning automation, GatherGenius" />
+  <meta name="author" content="GatherGenius" />
+  <meta name="robots" content="index, follow" />
   <title>GatherGenius - AI Chatbot for Event Management</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Font Awesome for Social Media Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Zapier Chatbot Script -->
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+
+  <!-- Optional Internal CSS for Chatbot Section -->
+  <style>
+    .chatbot-section {
+      padding: 4rem 1rem;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .chatbot-section h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    .chatbot-section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #555;
+      font-size: 1rem;
+    }
+    .chatbot-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -22,12 +52,12 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#benefits">Benefits</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="chatbot.html">Try Chatbot</a></li>
+      <li><a href="#chatbot">Try Chatbot</a></li>
     </ul>
     <div class="menu-toggle">☰</div>
   </nav>
 
-  <!-- Introduction Section with Image Slider -->
+  <!-- Introduction Section -->
   <section id="home" class="intro-section">
     <div class="slider">
       <div class="slides">
@@ -46,7 +76,7 @@
     <div class="intro-content">
       <h1>Empower Your Event Business with AI</h1>
       <p>Automate client inquiries, deliver instant quotes, and boost conversions with GatherGenius’ AI chatbot. Starting at ₹5,000/month, try it now!</p>
-      <a href="chatbot.html" class="cta-button">Request Demo</a>
+      <a href="#chatbot" class="cta-button">Request Demo</a>
     </div>
   </section>
 
@@ -86,7 +116,7 @@
           <li>Email support</li>
           <li>Website embed</li>
         </ul>
-        <a href="chatbot.html" class="cta-button">Try Demo</a>
+        <a href="#chatbot" class="cta-button">Try Demo</a>
       </div>
       <div class="pricing-card">
         <h3>Growth</h3>
@@ -113,14 +143,16 @@
     </div>
   </section>
 
-  <!-- Demo Section -->
-  <section id="demo" class="demo-section">
-    <h2>Experience Our Chatbot</h2>
-    <p>Try our AI chatbot to see how it automates client inquiries and delivers instant quotes for events starting at ₹3,000. Easily embed it on your website or integrate via API.</p>
-    <a href="chatbot.html" class="cta-button">Try Demo Now</a>
+  <!-- Embedded Chatbot Section -->
+  <section id="chatbot" class="chatbot-section">
+    <div class="chatbot-container">
+      <h2>Chat With GatherGenius 🤖</h2>
+      <p>Our AI chatbot helps your visitors with instant responses, quotes, and service details — available 24/7.</p>
+      <zapier-interfaces-chatbot-embed chatbot-id="cmbj6vicu005a36wcqbi486vg" style="width:100%; min-height:600px; border-radius:12px;"></zapier-interfaces-chatbot-embed>
+    </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <div class="footer-section">
@@ -133,8 +165,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#benefits">Benefits</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#demo">Demo</a></li>
-          <li><a href="chatbot.html">Try Chatbot</a></li>
+          <li><a href="#chatbot">Demo</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -160,14 +191,12 @@
   <!-- Loader -->
   <div class="loader" id="loader"></div>
 
-  <!-- Inline JavaScript -->
+  <!-- JavaScript -->
   <script>
-    // Mobile Menu Toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('active');
     });
 
-    // Show Loader on Page Load
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
       loader.style.display = 'flex';
@@ -176,7 +205,6 @@
       }, 1000);
     });
 
-    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -186,7 +214,6 @@
       });
     });
 
-    // Image Slider
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
