@@ -8,9 +8,11 @@
   <meta name="author" content="GatherGenius">
   <meta name="robots" content="index, follow">
   <title>GatherGenius - Affordable Event Planning</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Zapier Chatbot Script -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -20,7 +22,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#problems">Why Us</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="chatbot.html">Chatbot</a></li>
+      <li><a href="#chatbot">Chatbot</a></li>
     </ul>
     <div class="menu-toggle">☰</div>
   </nav>
@@ -29,7 +31,7 @@
   <section id="home" class="welcome-section">
     <div class="welcome-content">
       <h1>Welcome to GatherGenius 🎉</h1>
-      <p>Plan your dream event effortlessly with our affordable solutions for small and medium events like birthdays, weddings, and corporate gatherings. Starting at just ₹6,000, our chatbot helps you customize every detail. <a href="chatbot.html" class="cta-button">Chat Now!</a></p>
+      <p>Plan your dream event effortlessly with our affordable solutions for small and medium events like birthdays, weddings, and corporate gatherings. Starting at just ₹6,000, our chatbot helps you customize every detail. <a href="#chatbot" class="cta-button">Chat Now!</a></p>
     </div>
   </section>
 
@@ -58,7 +60,7 @@
         <p><strong>Chatbot Solution:</strong> Supports last-minute bookings with a 10% rush fee, starting at ₹8,000.</p>
       </div>
     </div>
-    <a href="chatbot.html" class="cta-button">Try Our Chatbot</a>
+    <a href="#chatbot" class="cta-button">Try Our Chatbot</a>
   </section>
 
   <!-- About Section -->
@@ -67,30 +69,47 @@
     <p>GatherGenius is your go-to for affordable event planning, specializing in small and medium events like birthdays, weddings, corporate gatherings, and cultural celebrations. With packages starting at ₹6,000, we handle venue booking, catering, décor, entertainment, and more, all tailored to your budget. Our AI-powered chatbot makes planning seamless, offering instant quotes, eco-friendly options, and free consultations. Let’s create your perfect event without stress or high costs!</p>
   </section>
 
+  <!-- Chatbot Section -->
+  <section id="chatbot" class="chatbot-section">
+    <div class="chatbot-container">
+      <h2>Chat with GatherGenius 🎉</h2>
+      <p>Plan your event with ease! Ask about services, get instant quotes, or book now.</p>
+      <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
-    <div style="margin-bottom: 15px;">
-      <a href="#home" style="color: #f0f0f0; margin: 0 10px; text-decoration: none;">Home</a>
-      <a href="#problems" style="color: #f0f0f0; margin: 0 10px; text-decoration: none;">Why Us</a>
-      <a href="#about" style="color: #f0f0f0; margin: 0 10px; text-decoration: none;">About</a>
-      <a href="chatbot.html" style="color: #f0f0f0; margin: 0 10px; text-decoration: none;">Chatbot</a>
-    </div>
-    <div style="margin-bottom: 15px;">
-      <a href="https://facebook.com" style="color: #f0f0f0; margin: 0 10px;"><img src="path-to-icons/facebook-icon.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
-      <a href="https://twitter.com" style="color: #f0f0f0; margin: 0 10px;"><img src="path-to-icons/twitter-icon.png" alt="Twitter" style="width: 24px; height: 24px;"></a>
-      <a href="https://instagram.com" style="color: #f0f0f0; margin: 0 10px;"><img src="path-to-icons/instagram-icon.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
-    </div>
-    <p style="margin: 0;">© 2025 GatherGenius. All rights reserved.</p>
-    <p style="margin: 5px 0 0 0;">
-      <a href="mailto:support@gathergenius.com" style="color: #f0f0f0; text-decoration: none;">Support</a> |
-      <a href="#privacy" style="color: #f0f0f0; text-decoration: none;">Privacy Policy</a> |
-      <a href="#terms" style="color: #f0f0f0; text-decoration: none;">Terms of Service</a>
-    </p>
+  <footer>
+    <p>© 2025 GatherGenius. All rights reserved. <a href="mailto:contact@gathergenius.com">Contact Us</a> | <a href="#home">Back to Top</a></p>
   </footer>
 
   <!-- Loader -->
   <div class="loader" id="loader"></div>
 
-  <script src="scripts.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
+    // Show Loader on Page Load
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.display = 'flex';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 1000); // Loader disappears after 1 second
+    });
+
+    // Smooth Scrolling for Navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
