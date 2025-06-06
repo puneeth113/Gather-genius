@@ -89,13 +89,19 @@
 
 <body>
   <!-- Chatbot Section -->
-  <section class="chatbot-section">
-    <div class="chatbot-container">
-      <h2>Try Our Chatbot 🎉</h2>
-      <p>Experience how our AI chatbot automates client inquiries and provides instant quotes for events starting at ₹3,000.</p>
-      <zapier-interfaces-chatbot-embed chatbot-id="cmbj6vicu005a36wcqbi486vg"></zapier-interfaces-chatbot-embed>
+ <!-- Embedded Chatbot Section -->
+<section id="chatbot" class="chatbot-section">
+  <div class="chatbot-container">
+    <h2>Chat With GatherGenius 🤖</h2>
+    <p>Our AI chatbot helps your visitors with instant responses, quotes, and service details — available 24/7.</p>
+    <div style="max-width: 800px; margin: 0 auto; padding: 1rem;">
+      <zapier-interfaces-chatbot-embed
+        chatbot-id="cmbj6vicu005a36wcqbi486vg"
+        style="width: 100%; height: 600px; border: none; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      </zapier-interfaces-chatbot-embed>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
