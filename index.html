@@ -3,111 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GatherGenius: Affordable event planning for small and medium events. Use our AI chatbot to plan birthdays, weddings, and corporate events with ease.">
-  <meta name="keywords" content="event planning, affordable events, chatbot, weddings, birthdays, corporate events, GatherGenius">
+  <meta name="description" content="GatherGenius: Affordable event planning for small and medium events using AI chatbot.">
+  <meta name="keywords" content="event planning, chatbot, weddings, birthdays, corporate events">
   <meta name="author" content="GatherGenius">
   <meta name="robots" content="index, follow">
   <title>GatherGenius - Affordable Event Planning</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Zapier Chatbot Script -->
   <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">GatherGenius</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#problems">Why Us</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#chatbot">Chatbot</a></li>
-    </ul>
-    <div class="menu-toggle">☰</div>
-  </nav>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">🎉 GatherGenius</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#problems">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#chatbot">Chat</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
 
-  <!-- Welcome Block -->
+  <!-- Home Section -->
   <section id="home" class="welcome-section">
     <div class="welcome-content">
       <h1>Welcome to GatherGenius 🎉</h1>
-      <p>Plan your dream event effortlessly with our affordable solutions for small and medium events like birthdays, weddings, and corporate gatherings. Starting at just ₹6,000, our chatbot helps you customize every detail. <a href="#chatbot" class="cta-button">Chat Now!</a></p>
+      <p>Plan your dream event effortlessly with our AI-powered chatbot. We help you organize birthdays, weddings, and corporate events starting from just ₹6,000. <a href="#chatbot" class="cta-button">Start Chatting</a></p>
     </div>
   </section>
 
-  <!-- Problems and Solutions Section -->
+  <!-- Why Us Section -->
   <section id="problems" class="problems-section">
-    <h2>Event Planning Challenges? Our Chatbot Solves Them!</h2>
+    <h2>We Solve Your Event Planning Challenges</h2>
     <div class="problems-grid">
       <div class="problem-card">
-        <h3>High Costs</h3>
-        <p>Event planning can be pricey, making it hard for small budgets.</p>
-        <p><strong>Chatbot Solution:</strong> Get instant quotes for budget-friendly packages starting at ₹6,000 with no hidden fees.</p>
+        <h3>💸 High Costs</h3>
+        <p><strong>Solution:</strong> Affordable packages starting from ₹6,000, no hidden fees.</p>
       </div>
       <div class="problem-card">
-        <h3>Time-Consuming Coordination</h3>
-        <p>Managing vendors and schedules is stressful and time-intensive.</p>
-        <p><strong>Chatbot Solution:</strong> Streamlines planning with vendor coordination starting at ₹1,500 and real-time responses.</p>
+        <h3>⏱️ Time-Consuming</h3>
+        <p><strong>Solution:</strong> Our chatbot handles coordination instantly, starting at ₹1,500.</p>
       </div>
       <div class="problem-card">
-        <h3>Decision Overload</h3>
-        <p>Choosing themes, menus, or venues can be overwhelming.</p>
-        <p><strong>Chatbot Solution:</strong> Offers tailored suggestions and free consultations to simplify your choices.</p>
+        <h3>🤯 Decision Overload</h3>
+        <p><strong>Solution:</strong> Get suggestions and consultations to ease your planning.</p>
       </div>
       <div class="problem-card">
-        <h3>Last-Minute Hassles</h3>
-        <p>Urgent events or changes create chaos.</p>
-        <p><strong>Chatbot Solution:</strong> Supports last-minute bookings with a 10% rush fee, starting at ₹8,000.</p>
+        <h3>⚠️ Last-Minute Issues</h3>
+        <p><strong>Solution:</strong> Book urgent events with rush support starting at ₹8,000.</p>
       </div>
     </div>
-    <a href="#chatbot" class="cta-button">Try Our Chatbot</a>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about-section">
-    <h2>About GatherGenius</h2>
-    <p>GatherGenius is your go-to for affordable event planning, specializing in small and medium events like birthdays, weddings, corporate gatherings, and cultural celebrations. With packages starting at ₹6,000, we handle venue booking, catering, décor, entertainment, and more, all tailored to your budget. Our AI-powered chatbot makes planning seamless, offering instant quotes, eco-friendly options, and free consultations. Let’s create your perfect event without stress or high costs!</p>
+    <h2>About Us</h2>
+    <p>GatherGenius makes event planning simple and affordable. We specialize in birthdays, weddings, corporate, and cultural events. Our smart chatbot helps you with instant quotes, bookings, and personalized support—eco-friendly and stress-free!</p>
   </section>
 
   <!-- Chatbot Section -->
   <section id="chatbot" class="chatbot-section">
     <div class="chatbot-container">
-      <h2>Chat with GatherGenius 🎉</h2>
-      <p>Plan your event with ease! Ask about services, get instant quotes, or book now.</p>
-      <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
+      <h2>Talk to Our Chatbot 🤖</h2>
+      <p>Have questions? Need a quote? Just ask!</p>
+      <zapier-interfaces-chatbot-embed chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 GatherGenius. All rights reserved. <a href="mailto:contact@gathergenius.com">Contact Us</a> | <a href="#home">Back to Top</a></p>
+    <p>© 2025 GatherGenius | <a href="#home">Home</a> | <a href="mailto:contact@gathergenius.com">Contact Us</a></p>
   </footer>
 
-  <!-- Loader -->
-  <div class="loader" id="loader"></div>
-
+  <!-- Scripts -->
   <script>
-    // Mobile Menu Toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('.nav-links').classList.toggle('active');
     });
 
-    // Show Loader on Page Load
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.style.display = 'flex';
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 1000); // Loader disappears after 1 second
-    });
-
-    // Smooth Scrolling for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
