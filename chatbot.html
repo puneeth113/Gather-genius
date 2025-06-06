@@ -1,100 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Try GatherGenius' AI chatbot demo for event management. Automate inquiries and get instant quotes for events starting at ₹3,000.">
-  <meta name="keywords" content="event management chatbot demo, GatherGenius, AI chatbot">
-  <meta name="author" content="GatherGenius">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Try GatherGenius' AI chatbot demo for event management. Automate inquiries and get instant quotes for events starting at ₹3,000."/>
+  <meta name="keywords" content="event management chatbot demo, GatherGenius, AI chatbot"/>
+  <meta name="author" content="GatherGenius"/>
+  <meta name="robots" content="index, follow"/>
   <title>GatherGenius - Chatbot Demo</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Font Awesome for Social Media Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Zapier Chatbot Script -->
-  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">GatherGenius</div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#benefits">Benefits</a></li>
-      <li><a href="index.html#pricing">Pricing</a></li>
-      <li><a href="index.html#demo">Demo</a></li>
-      <li><a href="chatbot.html">Try Chatbot</a></li>
-    </ul>
-    <div class="menu-toggle">☰</div>
-  </nav>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
 
-  <!-- Chatbot Demo Section -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    .chatbot-section {
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+    }
+
+    .chatbot-container {
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .chatbot-container h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .chatbot-container p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    zapier-interfaces-chatbot-embed {
+      width: 100%;
+      min-height: 650px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      margin-top: 0.5rem;
+    }
+
+    .social-icons a {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #1abc9c;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Chatbot Section -->
   <section class="chatbot-section">
     <div class="chatbot-container">
-      <h2>Try Our Chatbot Demo 🎉</h2>
+      <h2>Try Our Chatbot 🎉</h2>
       <p>Experience how our AI chatbot automates client inquiries and provides instant quotes for events starting at ₹3,000.</p>
-      <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmbj6vicu005a36wcqbi486vg'></zapier-interfaces-chatbot-embed>
-      <a href="index.html" class="cta-button">Back to Home</a>
+      <zapier-interfaces-chatbot-embed chatbot-id="cmbj6vicu005a36wcqbi486vg"></zapier-interfaces-chatbot-embed>
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>GatherGenius</h3>
-        <p>Empowering event management businesses with AI-driven automation.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#benefits">Benefits</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="index.html#demo">Demo</a></li>
-          <li><a href="chatbot.html">Try Chatbot</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:contact@gathergenius.com">contact@gathergenius.com</a></p>
-        <p>Phone: +91 123-456-7890</p>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
       <p>© 2025 GatherGenius. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </footer>
-
-  <!-- Loader -->
-  <div class="loader" id="loader"></div>
-
-  <!-- Inline JavaScript -->
-  <script>
-    // Mobile Menu Toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-
-    // Show Loader on Page Load
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.style.display = 'flex';
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 1000);
-    });
-  </script>
 </body>
 </html>
