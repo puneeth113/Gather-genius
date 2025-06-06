@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GatherGenius Chatbot</title>
+  <meta name="description" content="GatherGenius: Affordable event planning for small and medium events. Use our AI chatbot to plan birthdays, weddings, and corporate events with ease.">
+  <meta name="keywords" content="event planning, affordable events, chatbot, weddings, birthdays, corporate events, GatherGenius">
+  <meta name="author" content="GatherGenius">
+  <meta name="robots" content="index, follow">
+  <title>GatherGenius - Affordable Event Planning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     * {
       margin: 0;
@@ -18,88 +24,140 @@
       line-height: 1.6;
     }
 
-    /* Header Styles */
-    header {
+    /* Navigation Bar */
+    .navbar {
       background: linear-gradient(90deg, #ff6f61, #ffb88c);
       color: white;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* Chatbot Section */
-    .chatbot-section {
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 3rem 1rem;
-      min-height: 70vh;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .chatbot-container {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      max-width: 450px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .chatbot-container:hover {
-      transform: translateY(-5px);
-    }
-
-    .chatbot-container h2 {
-      color: #ff6f61;
+    .logo {
       font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-weight: 600;
     }
 
-    .chatbot-container iframe {
-      border: none;
-      width: 100%;
-      height: 500px;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #ffe0b2;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      background: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .welcome-content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
       border-radius: 10px;
     }
 
-    /* Toggle Button for Chatbot */
-    .chatbot-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+    .welcome-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-button {
+      display: inline-block;
       background: #ff6f61;
       color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 1rem;
       transition: background 0.3s ease;
     }
 
-    .chatbot-toggle:hover {
+    .cta-button:hover {
       background: #e65b50;
+    }
+
+    /* Problems Section */
+    .problems-section {
+      padding: 3rem 1rem;
+      background: white;
+      text-align: center;
+    }
+
+    .problems-section h2 {
+      color: #ff6f61;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .problem-card {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .problem-card h3 {
+      color: #ff6f61;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-card p {
+      font-size: 1rem;
+      color: #555;
     }
 
     /* About Section */
     .about-section {
-      background: #fff;
       padding: 3rem 1rem;
+      background: #f5f5f5;
       text-align: center;
     }
 
@@ -114,6 +172,60 @@
       margin: 0 auto;
       font-size: 1.1rem;
       color: #555;
+    }
+
+    /* Chatbot Section */
+    .chatbot-section {
+      padding: 3rem 1rem;
+      background: white;
+      text-align: center;
+    }
+
+    .chatbot-container {
+      background: #f9f9f9;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      max-width: 450px;
+      margin: 0 auto;
+      transition: transform 0.3s ease;
+    }
+
+    .chatbot-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .chatbot-container h2 {
+      color: #ff6f61;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .chatbot-container p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .chatbot-container iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+    }
+
+    .chatbot-close {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .chatbot-close:hover {
+      background: #e65b50;
     }
 
     /* Footer */
@@ -134,7 +246,7 @@
       text-decoration: underline;
     }
 
-    /* Loading Animation */
+    /* Loader */
     .loader {
       display: none;
       position: fixed;
@@ -164,76 +276,128 @@
     }
 
     /* Responsive Design */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .chatbot-container {
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #ff6f61;
         padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .welcome-content h1 {
+        font-size: 2rem;
+      }
+
+      .welcome-content p {
+        font-size: 1rem;
       }
 
       .chatbot-container iframe {
         height: 400px;
       }
-
-      .chatbot-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Welcome to GatherGenius Chatbot 🎉</h1>
-    <p>Plan your dream event with ease—affordable, memorable, and hassle-free!</p>
-  </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">GatherGenius</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#problems">Why Us</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#chatbot">Chatbot</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
 
-  <!-- Chatbot Section -->
-  <section class="chatbot-section">
-    <div class="chatbot-container" id="chatbot-container">
-      <h2>Chat with Us!</h2>
-      <iframe src="https://interfaces.zapier.com/embed/chatbot/cmbj6vicu005a36wcqbi486vg" 
-              allow="clipboard-write *" 
-              style="border: none;"></iframe>
+  <!-- Welcome Block -->
+  <section id="home" class="welcome-section">
+    <div class="welcome-content">
+      <h1>Welcome to GatherGenius 🎉</h1>
+      <p>Plan your dream event effortlessly with our affordable solutions for small and medium events like birthdays, weddings, and corporate gatherings. Starting at just ₹6,000, our chatbot helps you customize every detail. <a href="#chatbot" class="cta-button">Chat Now!</a></p>
     </div>
   </section>
 
+  <!-- Problems and Solutions Section -->
+  <section id="problems" class="problems-section">
+    <h2>Event Planning Challenges? Our Chatbot Solves Them!</h2>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <h3>High Costs</h3>
+        <p>Event planning can be pricey, making it hard for small budgets.</p>
+        <p><strong>Chatbot Solution:</strong> Get instant quotes for budget-friendly packages starting at ₹6,000 with no hidden fees.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Time-Consuming Coordination</h3>
+        <p>Managing vendors and schedules is stressful and time-intensive.</p>
+        <p><strong>Chatbot Solution:</strong> Streamlines planning with vendor coordination starting at ₹1,500 and real-time responses.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Decision Overload</h3>
+        <p>Choosing themes, menus, or venues can be overwhelming.</p>
+        <p><strong>Chatbot Solution:</strong> Offers tailored suggestions and free consultations to simplify your choices.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Last-Minute Hassles</h3>
+        <p>Urgent events or changes create chaos.</p>
+        <p><strong>Chatbot Solution:</strong> Supports last-minute bookings with a 10% rush fee, starting at ₹8,000.</p>
+      </div>
+    </div>
+    <a href="#chatbot" class="cta-button">Try Our Chatbot</a>
+  </section>
+
   <!-- About Section -->
-  <section class="about-section">
+  <section id="about" class="about-section">
     <h2>About GatherGenius</h2>
-    <p>GatherGenius is your go-to event planning partner, specializing in affordable small and medium events like birthdays, weddings, corporate gatherings, and cultural celebrations. Our chatbot helps you explore services, get instant quotes, and book with ease—starting at just ₹6,000! Let us make your event unforgettable without breaking the bank.</p>
+    <p>GatherGenius is your go-to for affordable event planning, specializing in small and medium events like birthdays, weddings, corporate gatherings, and cultural celebrations. With packages starting at ₹6,000, we handle venue booking, catering, décor, entertainment, and more, all tailored to your budget. Our AI-powered chatbot makes planning seamless, offering instant quotes, eco-friendly options, and free consultations. Let’s create your perfect event without stress or high costs!</p>
+  </section>
+
+  <!-- Chatbot Section -->
+  <section id="chatbot" class="chatbot-section">
+    <div class="chatbot-container" id="chatbot-container">
+      <h2>Chat with GatherGenius 🎉</h2>
+      <p>Plan your event with ease! Ask about services, get instant quotes, or book now.</p>
+      <iframe src="https://interfaces.zapier.com/embed/chatbot/cmbj6vicu005a36wcqbi486vg" 
+              allow="clipboard-write *" 
+              style="border: none;"></iframe>
+      <button class="chatbot-close" onclick="toggleChatbot()">Close Chatbot</button>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 GatherGenius. All rights reserved. <a href="mailto:contact@gathergenius.com">Contact Us</a></p>
+    <p>© 2025 GatherGenius. All rights reserved. <a href="mailto:contact@gathergenius.com">Contact Us</a> | <a href="#home">Back to Top</a></p>
   </footer>
-
-  <!-- Chatbot Toggle Button -->
-  <button class="chatbot-toggle" onclick="toggleChatbot()">💬</button>
 
   <!-- Loader -->
   <div class="loader" id="loader"></div>
 
   <script>
+    // Mobile Menu Toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+
     // Toggle Chatbot Visibility
     function toggleChatbot() {
       const chatbotContainer = document.getElementById('chatbot-container');
-      const toggleButton = document.querySelector('.chatbot-toggle');
       if (chatbotContainer.style.display === 'none') {
         chatbotContainer.style.display = 'block';
-        toggleButton.innerHTML = '💬';
       } else {
         chatbotContainer.style.display = 'none';
-        toggleButton.innerHTML = '➕';
       }
     }
 
@@ -246,7 +410,7 @@
       }, 1000); // Loader disappears after 1 second
     });
 
-    // Smooth Scroll for Navigation (if needed)
+    // Smooth Scrolling for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
