@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GatherGenius: Affordable event planning for birthdays, weddings, and corporate events. Use our AI chatbot for seamless planning and instant quotes.">
-  <meta name="keywords" content="event planning, affordable events, chatbot, weddings, birthdays, corporate events, GatherGenius">
+  <meta name="description" content="GatherGenius: AI chatbot service for event management businesses. Automate inquiries, provide instant quotes, and boost conversions.">
+  <meta name="keywords" content="event management chatbot, AI chatbot, event planning automation, GatherGenius">
   <meta name="author" content="GatherGenius">
   <meta name="robots" content="index, follow">
-  <title>GatherGenius - Affordable Event Planning</title>
+  <title>GatherGenius - AI Chatbot for Event Management</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -20,95 +20,105 @@
     <div class="logo">GatherGenius</div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="#problems">Challenges</a></li>
+      <li><a href="#benefits">Benefits</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#connect">Connect</a></li>
-      <li><a href="chatbot.html">Chat with Us</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="chatbot.html">Try Chatbot</a></li>
     </ul>
     <div class="menu-toggle">☰</div>
   </nav>
 
-  <!-- Introduction Section -->
+  <!-- Introduction Section with Image Slider -->
   <section id="home" class="intro-section">
+    <div class="slider">
+      <div class="slides">
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1529636798452-1f31b13c1e43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb295b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+      </div>
+      <button class="prev" onclick="moveSlide(-1)">❮</button>
+      <button class="next" onclick="moveSlide(1)">❯</button>
+      <div class="dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+    </div>
     <div class="intro-content">
-      <h1>Create Unforgettable Events with GatherGenius 🎉</h1>
-      <p>Plan your dream event effortlessly with our affordable solutions for birthdays, weddings, and corporate gatherings. Starting at just ₹3,000, our AI chatbot makes planning a breeze.</p>
-      <a href="chatbot.html" class="cta-button">Start Planning Now</a>
+      <h1>Empower Your Event Business with AI</h1>
+      <p>Automate client inquiries, deliver instant quotes, and boost conversions with GatherGenius’ AI chatbot. Starting at ₹5,000/month, it’s the perfect tool for event management companies.</p>
+      <a href="chatbot.html" class="cta-button">Request Demo</a>
     </div>
   </section>
 
-  <!-- Problems and Solutions Section -->
-  <section id="problems" class="problems-section">
-    <h2>Overcome Event Planning Challenges</h2>
-    <div class="problems-grid">
-      <div class="problem-card">
-        <h3>High Costs</h3>
-        <p>Event planning often exceeds small budgets.</p>
-        <p><strong>Solution:</strong> Instant quotes for packages starting at ₹3,000, with no hidden fees.</p>
+  <!-- Benefits Section -->
+  <section id="benefits" class="benefits-section">
+    <h2>Why Choose Our Chatbot?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>Save Time</h3>
+        <p>Automate repetitive inquiries about pricing, venues, and services, freeing your team to focus on planning.</p>
       </div>
-      <div class="problem-card">
-        <h3>Time-Consuming Coordination</h3>
-        <p>Managing vendors and schedules is stressful.</p>
-        <p><strong>Solution:</strong> Streamlined vendor coordination starting at ₹1,000 with real-time support.</p>
+      <div class="benefit-card">
+        <h3>Boost Conversions</h3>
+        <p>Provide instant, tailored quotes (e.g., ₹3,000 events) to capture clients before they look elsewhere.</p>
       </div>
-      <div class="problem-card">
-        <h3>Decision Overload</h3>
-        <p>Choosing themes or venues can be overwhelming.</p>
-        <p><strong>Solution:</strong> Tailored suggestions and free consultations via our chatbot.</p>
+      <div class="benefit-card">
+        <h3>24/7 Availability</h3>
+        <p>Engage clients anytime, even after hours, with real-time responses and booking options.</p>
       </div>
-      <div class="problem-card">
-        <h3>Last-Minute Hassles</h3>
-        <p>Urgent changes create chaos.</p>
-        <p><strong>Solution:</strong> Last-minute bookings with a 10% rush fee, starting at ₹4,000.</p>
+      <div class="benefit-card">
+        <h3>Easy Integration</h3>
+        <p>Embed our chatbot on your website or integrate via API for seamless workflows.</p>
       </div>
     </div>
   </section>
 
   <!-- Pricing Section -->
   <section id="pricing" class="pricing-section">
-    <h2>Affordable Pricing Plans</h2>
+    <h2>Pricing Plans for Your Business</h2>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <h3>Basic Event</h3>
-        <p class="price">₹3,000</p>
+        <h3>Starter</h3>
+        <p class="price">₹5,000<span>/month</span></p>
         <ul>
-          <li>Up to 30 guests</li>
-          <li>Venue booking</li>
-          <li>Basic décor</li>
-          <li>Chatbot support</li>
+          <li>1,000 queries/month</li>
+          <li>Basic customization</li>
+          <li>Email support</li>
+          <li>Website embed</li>
         </ul>
-        <a href="chatbot.html" class="cta-button">Get Quote</a>
+        <a href="chatbot.html" class="cta-button">Try Demo</a>
       </div>
       <div class="pricing-card">
-        <h3>Premium Event</h3>
-        <p class="price">₹15,000</p>
+        <h3>Growth</h3>
+        <p class="price">₹15,000<span>/month</span></p>
         <ul>
-          <li>Up to 80 guests</li>
-          <li>Venue & catering</li>
-          <li>Custom décor</li>
-          <li>Vendor coordination</li>
+          <li>5,000 queries/month</li>
+          <li>Full customization</li>
+          <li>Analytics dashboard</li>
+          <li>Priority support</li>
         </ul>
-        <a href="chatbot.html" class="cta-button">Get Quote</a>
+        <a href="mailto:contact@gathergenius.com" class="cta-button">Contact Sales</a>
       </div>
       <div class="pricing-card">
-        <h3>Wedding Package</h3>
-        <p class="price">₹40,000</p>
+        <h3>Enterprise</h3>
+        <p class="price">Custom</p>
         <ul>
-          <li>Up to 150 guests</li>
-          <li>Full event planning</li>
-          <li>Premium décor</li>
-          <li>Entertainment</li>
+          <li>Unlimited queries</li>
+          <li>API integration</li>
+          <li>Dedicated support</li>
+          <li>Multi-tenant setup</li>
         </ul>
-        <a href="chatbot.html" class="cta-button">Get Quote</a>
+        <a href="mailto:contact@gathergenius.com" class="cta-button">Contact Sales</a>
       </div>
     </div>
   </section>
 
-  <!-- Connect Us Section -->
-  <section id="connect" class="connect-section">
-    <h2>Connect with Us</h2>
-    <p>Have questions or ready to plan your event? Our AI chatbot is here to help with instant quotes and personalized suggestions.</p>
-    <a href="chatbot.html" class="cta-button">Chat with Us</a>
+  <!-- Demo Section -->
+  <section id="demo" class="demo-section">
+    <h2>Experience Our Chatbot</h2>
+    <p>Try our AI chatbot to see how it automates client inquiries and delivers instant quotes for events starting at ₹3,000. Easily embed it on your website or integrate via API.</p>
+    <a href="chatbot.html" class="cta-button">Try Demo Now</a>
   </section>
 
   <!-- Footer Section -->
@@ -116,15 +126,15 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>GatherGenius</h3>
-        <p>Planning unforgettable events with ease and affordability. Contact us to make your next event a success!</p>
+        <p>Empowering event management businesses with AI-driven automation. Contact us to transform your client engagement.</p>
       </div>
       <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#problems">Challenges</a></li>
+          <li><a href="#benefits">Benefits</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#connect">Connect</a></li>
+          <li><a href="#demo">Demo</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -143,37 +153,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 GatherGenius. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+      <p>© 2025 GatherGenius. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="api-docs.html">API Docs</a></p>
     </div>
   </footer>
 
   <!-- Loader -->
   <div class="loader" id="loader"></div>
 
-  <script>
-    // Mobile Menu Toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-
-    // Show Loader on Page Load
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      loader.style.display = 'flex';
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 1000); // Loader disappears after 1 second
-    });
-
-    // Smooth Scrolling for Navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
